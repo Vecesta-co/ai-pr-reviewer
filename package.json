@@ -1,0 +1,63 @@
+{
+  "name": "@vecesta/ai-pr-reviewer",
+  "version": "1.0.0",
+  "description": "Enterprise-grade autonomous pull request reviewer and pre-commit code audit engine powered by Ollama, Gemini, and OpenAI.",
+  "author": "Vecesta.co <vecesta.co@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/Vecesta-co/ai-pr-reviewer#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vecesta-co/ai-pr-reviewer.git"
+  },
+  "keywords": [
+    "code-review",
+    "github-action",
+    "ai",
+    "llm",
+    "ollama",
+    "gemini",
+    "openai",
+    "pull-request",
+    "security-audit",
+    "static-analysis",
+    "vecesta"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "ai-pr-reviewer": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "action.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/cli.js",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "dependencies": {
+    "@actions/core": "^1.10.1",
+    "@actions/github": "^6.0.0",
+    "@octokit/rest": "^20.1.1",
+    "chalk": "^4.1.2",
+    "commander": "^12.1.0",
+    "dotenv": "^16.4.5",
+    "parse-diff": "^0.11.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.9",
+    "@vitest/coverage-v8": "^2.0.4",
+    "typescript": "^5.5.3",
+    "vitest": "^2.0.4"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

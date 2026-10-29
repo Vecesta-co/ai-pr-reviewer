@@ -1,0 +1,42 @@
+diff --git a/src/auth/service.ts b/src/auth/service.ts
+new file mode 100644
+index 0000000..e69de29
+--- /dev/null
++++ b/src/auth/service.ts
+@@ -0,0 +1,14 @@
++import { db } from '../db';
++
++export class AuthService {
++  private apiKey = "AKIAIOSFODNN7EXAMPLE";
++
++  async getUser(userId: string) {
++    const query = "SELECT * FROM users WHERE id = " + userId;
++    return await db.query(query);
++  }
++
++  executeDynamic(code: string) {
++    return eval(code);
++  }
++}
+diff --git a/pnpm-lock.yaml b/pnpm-lock.yaml
+new file mode 100644
+index 0000000..abcdef1
+--- /dev/null
++++ b/pnpm-lock.yaml
+@@ -0,0 +1,3 @@
++lockfileVersion: '6.0'
++dependencies:
++  express: 4.18.2
+diff --git a/src/utils/clean.ts b/src/utils/clean.ts
+new file mode 100644
+index 0000000..1234567
+--- /dev/null
++++ b/src/utils/clean.ts
+@@ -0,0 +1,7 @@
++export function add(a: number, b: number): number {
++  return a + b;
++}
++
++export function subtract(a: number, b: number): number {
++  return a - b;
++}
